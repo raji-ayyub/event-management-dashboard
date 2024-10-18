@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Event Management dashboard</title>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- header for mobile view only -->
+    <header>
+        <nav class="navbar mobile">
+
+            <div class="nav-left">Full Logo</div>
+            
+            <div class="nav-right">
+                <div class="icon-box">
+                    <img src="icons/Vector (1).svg" class="icon sm" />
+                </div>
+            </div>
+
+        </nav>
+
+    </header>
+    <!-- mobile header end -->
+
+
+
+    
+
+    <div class="main">
+
+        <aside>
+            <div class="logo">
+                Full logo
+            </div>
+
+            <ul class="aside-tabs">
+                <li>
+                    <div class="icon-box"><img src="icons/Vectorlight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Home</span>
+                </li>
+
+                <li>
+                    <div class="icon-box"><img src="icons/solar_calendar-linearlight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Events</span>
+                </li>
+
+                <li>
+                    <div class="icon-box"><img src="icons/double-chat-bubblelight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Speakers</span>
+                </li>
+
+                <li>
+                    <div class="icon-box"><img src="icons/solar_document-linearlight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Reports</span>
+                </li>
+
+                <li>
+                    <div class="icon-box"><img src="icons/belllight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Notifications</span>
+                </li>
+
+                <li>
+                    <div class="icon-box"><img src="icons/double-chat-bubblelight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Messages</span>
+                </li>
+
+                <li>
+                    <div class="icon-box"><img src="icons/settings-2.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Settings</span>
+                </li>
+
+                <li>
+                    <div class="icon-box"><img src="icons/double-chat-bubblelight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Collapse</span>
+                </li>
+
+                <li>
+                    <div class="theme-btn">
+                        <div class="theme-btn-bob"></div>
+                    </div>
+                    <span id ="aside-tab-text">Dark Mode</span>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="dashboard">
+
+
+            <section class="section-a">
+                <div class="container ">
+    
+                    <h2 class="section-header">Welcome! here’s your summary</h2>
+                    
+                    
+                    <div class="stat-cont">
+
+                        <div class="stat-div" id="stat-box">
+        
+                            <div class="stat-head">
+                                <h4 class="stat-name">Total Events</h4>
+                                <img src="icons/informationinfo.svg" class="icon sm" />
+                            </div>
+        
+                            <div class="stat-data-div">
+                                <h2 class="stat-data" id="stat-data">100</h2>
+        
+                                <div class="indicator">
+                                    <img src="icons/Vectordownright.svg" class="icon arrow" />
+        
+                                    <span class="percentage" id="percentage">0.5%</span>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div class="stat-div" id="stat-box">
+        
+                            <div class="stat-head">
+                                <h4 class="stat-name">Total Events</h4>
+                                <img src="icons/informationinfo.svg" class="icon sm" />
+                            </div>
+        
+                            <div class="stat-data-div">
+                                <h2 class="stat-data" id="stat-data">100</h2>
+        
+                                <div class="indicator">
+                                    <img src="icons/Vectordownright.svg" class="icon arrow" />
+        
+                                    <span class="percentage" id="percentage">0.5%</span>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div class="stat-div" id="stat-box">
+        
+                            <div class="stat-head">
+                                <h4 class="stat-name">Total Events</h4>
+                                <img src="icons/informationinfo.svg" class="icon sm" />
+                            </div>
+        
+                            <div class="stat-data-div">
+                                <h2 class="stat-data" id="stat-data">100</h2>
+        
+                                <div class="indicator">
+                                    <img src="icons/Vectordownright.svg" class="icon arrow" />
+        
+                                    <span class="percentage" id="percentage">0.5%</span>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div class="stat-div" id="stat-box">
+        
+                            <div class="stat-head">
+                                <h4 class="stat-name">Total Events</h4>
+                                <img src="icons/informationinfo.svg" class="icon sm" />
+                            </div>
+        
+                            <div class="stat-data-div">
+                                <h2 class="stat-data" id="stat-data">100</h2>
+        
+                                <div class="indicator">
+                                    <img src="icons/Vectordownright.svg" class="icon arrow" />
+        
+                                    <span class="percentage" id="percentage">0.5%</span>
+                                </div>
+                            </div>
+        
+                        </div>
+    
+                    </div>
+    
+                </div>
+            </section>
+
+
+
+    
+    
+            <section class="section-a">
+                <div class="container">
+    
+                    <h2 class="section-header">Event Registrations per month</h2>
+                    
+
+                    <div class=" stat-cont">
+                        <div class="graph-div">
+                            <canvas id="eventChart" width="400" height="300"></canvas>
+
+                            
+        
+                        </div>
+
+
+        
+                        <!-- CAROUSEL COMPONENT -->
+
+                        <div class="carousel-div">
+        
+                            <div class="carousel-slide">
+
+                                <div class="sliders">
+                                    
+                                    <img src="images/Slide1.png" class="car-img" />
+                                    <div class="caption-texts">
+                                        <h4>Latest News & Updates</h4>
+                                        <p>Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sliders">
+                                    
+                                    <img src="images/slide2.jfif" class="car-img" />
+                                    <div class="caption-texts">
+                                        <h4>Latest News & Updates</h4>
+                                        <p>Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sliders">
+                                    
+                                    <img src="images/Slide (2).png" class="car-img zoomed" />
+                                    <div class="caption-text">
+                                        <h4>Latest News & Updates</h4>
+                                        <p>Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.</p>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- slides prev/next buttons -->
+
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+                                 <!-- slide trackers (bullets) -->
+
+                                <div class="dots">
+                                    <span class="dot" onclick="currentSlide(1)"></span> 
+                                    <span class="dot" onclick="currentSlide(2)"></span> 
+                                    <span class="dot" onclick="currentSlide(3)"></span> 
+                                </div>
+
+                                </div>
+
+                            </div>
+
+                           
+
+                        <!-- CAROUSEL END -->
+
+                    </div>
+                    
+                    
+    
+    
+    
+                </div>
+    
+                
+            </section>
+
+
+
+
+
+
+
+
+
+
+    
+            <section class="section-a">
+
+                <div class="container ">
+    
+                    <h2 class="section-header">Events History</h2>
+
+                    <div class="stat-cont ">
+                        <div class="select-div">
+                        
+                            <div class="tabs-nav">
+        
+                                
+                                <div class="search-div">
+                                    <button class="search-btn" id="search-btn">
+                                        <img src="icons/searchsearch.svg"  class="icon sm" />
+                                    </button>
+        
+                                    <input type="search" id="search" class="search" />
+                                </div>
+        
+                                <!-- <select id="sortFilter" class="select">
+                                    <option class="option" value="mostRecent">Most Recent</option>
+                                    <option class="option" value="oldestFirst">Oldest First</option>
+                                </select> -->
+
+                                <div class="dropdowns">
+                                    <button id="date" class="sel-button">Date</button>
+                                    <ul class="options op1">
+                                        <li value="all">All</li>
+                                        <li value="jan">Jan</li>
+                                        <li value="feb">Feb</li>
+                                        <li value="mar">Mar</li>
+                                        <li value="apr">Apr</li>
+                                        <li value="may">May</li>
+                                        <li value="jun">Jun</li>
+                                        <li value="jul">Jul</li>
+                                        <li value="aug">Aug</li>
+                                        <li value="sep">Sep</li>
+                                        <li value="oct">Oct</li>
+                                        <li value="nov">Nov</li>
+                                        <li value="dec">Dec</li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdowns">
+                                    <button id="status" class="sel-button">Status</button>
+                                    <ul class="options op1">
+                                        <li value="all">All</li>
+                                        <li value="completed">Completed</li>
+                                        <li value="inprogress">In Progress</li>
+                                        
+                                    </ul>
+                                </div>
+
+                               
+                                <div class="dropdowns">
+                                    <button class="sel-button">Name</button>
+                                    <ul class="options op1">
+                                        <li value="all">All</li>
+                                        <li value="speader1">speaker1</li>
+                                        <li value="speaker2">speaker2</li>
+                                      
+                                    </ul>
+                                </div>
+                               
+        
+                            </div>
+        
+                            
+                            
+        
+                        </div>
+                        
+        
+                        
+                        <div class="result-div">
+        
+                            <h2 class="sub-header">Displaying 100 results</h2>
+        
+                                <div class="sorting-nav">
+                                    <div >
+                                        <p>Sort:</p>
+                                        
+                                        <select id="sortFilter" class="period">
+                                            <option class="option" value="mostRecent">Most Recent</option>
+                                            <option class="option" value="oldestFirst">Oldest First</option>
+                                        </select>
+
+                                        
+                                    </div>
+        
+                                    <div >
+                                        <div class=" lined">
+                                            <img src="icons/informationinfo.svg" class="icon" />
+                                        </div>
+                                        <button type="button" class="export">
+                                            <img src="icons/download.svg" class="icon sm" />
+                                            <p>Export</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            
+                        </div>
+
+                    </div>
+    
+                    
+                    
+    
+    
+    
+                </div>
+    
+                
+            </section>
+
+
+
+
+    
+    
+            <!-- EVENTS SECTION -->
+
+            <section class="section-a">
+
+
+                <div class="event-container stat-cont col">
+    
+                    <div class="events-nav">
+                        <div class="event-tabs">
+                            <h2 class="sub-header event-list-name">Events Name</h2>
+
+                            <div class="desktop-middle-tabs margin-shift">
+                                <p>Date</p>
+                                <p>Speaker</p>
+                            
+                            </div>
+
+                            <h2 class="sub-header status-header-tab">Status</h2>
+    
+                        </div>
+    
+                    </div>
+    
+    
+                    <ul id="eventsBody" class="events-list">
+                        <!-- TO BE POPULATED WITH DEMO DATA -->
+    
+                    </ul>
+    
+                    
+                  
+                    
+                    <div class="pagination-div">
+                        <div class="pagination-row">
+                            
+                            <div class="pagination">
+                                <button id="prev-num" class="numbers-btn"><img src="icons/chevron-right.svg" class="icon" /> </button>
+                                <ul class="page-numbers">
+                                    <!-- <li class="nums current">1</li>   
+                                    <li class="nums">2</li> 
+                                    <li class="nums">3</li>    -->
+                                </ul>
+                                <button id="next-num" class="numbers-btn"><img src="icons/chevron-right.svg" class="icon" /> </button>
+    
+                            </div>
+    
+                            <select id="rows-select" class="rows-settings">
+                                <option value="5">5 rows</option>
+                                <option value="10" selected>10 rows</option>
+                                <option value="25">25 rows</option>
+                            </select> 
+                            
+    
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+                
+            </section>
+    
+
+
+
+
+
+
+
+
+            <!-- FOOTER -->
+    
+            <section class="footer-nav">
+                <div class="container footer-cont">
+                    <ul class="footer-tabs">
+                        <li class="footer-tab-active">
+                            <img src="icons/home (1).svg" class="icon big"/>
+                            <p>Home</p>
+                        </li>
+    
+                        <li>
+                            <img src="icons/solar_calendar-linear.svg" class="icon big"/>
+                            <p>Events</p>
+                        </li>
+    
+                        <li>
+                            <img src="icons/solar_user-speak-rounded-linear.svg" class="icon big"/>
+                            <p>Speakers</p>
+                        </li>
+
+                        <li>
+                            <img src="icons/solar_document-linear.svg" class="icon big"/>
+                            <p>Reports</p>
+                        </li>
+    
+                        <li>
+                            <img src="icons/user-circle.svg" class="icon big"/>
+                            <p>Profile</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+    
+    
+        </div>
+        </div>
+    
+
+
+    <script src="js/index.js"></script>
+    
+</body>
+</html>
