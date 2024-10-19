@@ -1,21 +1,8 @@
 
 
-// demo data working simulation
 
-// const eventsData = [
-//     { 
-//         eventName: "Cloud Innovation Summit", 
-//         date: "2024-10-15", 
-        
-//         speaker: "Jane Doe", 
-//         status: "Completed" 
-//     },
-//     { eventName: "Blockchain Revolution Conference", date: "2024-01-01", speaker: "Dr. Peter Smith", status: "Completed" },
-//     { eventName: "AI in Healthcare Symposium", date: "2024-01-01", speaker: "Dr. Aisha Malik", status: "In Progress" },
-//     { eventName: "Future of Fintech Forum", date: "2024-10-25", speaker: "John Lee", status: "Completed" },
-//     { eventName: "Data Analytics in Business", date: "2024-11-03", speaker: "Jane Doe", status: "Completed" },
-   
-//   ];
+
+// DEMO RANDOM DATA ---------------------------------------
 
 const eventsData = [
     { eventName: "Cloud Innovation Summit", date: "2024-01-10", speaker: "Jane Doe", status: "Completed" },
@@ -62,13 +49,6 @@ const eventsData = [
 
 
 
-
-
-
-
-
-
-
   function populateTable(events) {
 
     const tableBody = document.getElementById('eventsBody');
@@ -98,8 +78,6 @@ const eventsData = [
 
 
 // PAGINATION BASED DISPLAY (EVENTS)
-
-
 
 
 let currentPage = 1; 
@@ -269,11 +247,6 @@ document.querySelectorAll('.dropdowns').forEach(dropdown => {
 
 
 
-
-
-
-
-
 // FILTERS
 
 
@@ -400,3 +373,100 @@ function showSlides(n) {
     plusSlides(1);
   }, 3000); 
 }
+
+
+
+
+
+
+
+
+
+
+
+// OTHER FUNCTIONS
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+    // DARK MODE LIGHT MODE SWITCH LOGIC
+
+    const toggleButtonAll = document.querySelectorAll(".theme-switch");
+    const toggleBobAll = document.querySelectorAll('.theme-btn-bob');
+    
+    
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+  
+    toggleButtonAll.forEach(toggleButton => {
+        toggleButton.addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+    
+            toggleBobAll.forEach(toggleBob => {
+                toggleBob.classList.toggle("bob-toggled");
+            })
+    
+            
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    })
+
+
+
+
+
+    // SIDEBAR TOGGLE
+
+    const sideBartoggler = document.getElementById("sidbar-toggle");
+    const fixHeader = document.getElementById("header");
+    const sideBar = document.getElementById("sidebar");
+
+    const close = document.getElementById("close");
+    const bars = document.getElementById("bars");
+
+    sideBartoggler.addEventListener("click", function() {
+        sideBar.classList.toggle("slide-fade");
+        fixHeader.classList.toggle("fixed");
+
+        close.classList.toggle("show");
+        bars.classList.toggle("hide");
+
+
+    })
+
+    // --------------
+    
+    
+    // ASIDE-TABS CONTROL
+
+    const collapsible = document.getElementById("collapsible");
+    const aside = document.getElementById("aside");
+    const asTabText = document.querySelectorAll(".aside-tab-text");
+
+    const asideItems = document.querySelectorAll(".aside-items");
+
+
+
+
+    collapsible.addEventListener("click", function(){
+        aside.classList.toggle("aside-collapse");
+        
+        asideItems.forEach(items => {
+            items.classList.toggle("aside-items-collapsed")
+        })
+
+        asTabText.forEach(asText => {
+            setTimeout(() => {
+                asText.classList.toggle("hidden-text");
+            }, 400);
+        })
+    })
+
+})

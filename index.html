@@ -25,14 +25,16 @@
 <body>
 
     <!-- header for mobile view only -->
-    <header>
+    <header id="header">
         <nav class="navbar mobile">
 
             <div class="nav-left">Full Logo</div>
             
             <div class="nav-right">
-                <div class="icon-box">
-                    <img src="icons/Vector (1).svg" class="icon sm" />
+                <div id="sidbar-toggle" class="icon-box">
+                    <img src="icons/Vector (1).svg" id="bars" class="icon bars" />
+
+                    <img src="icons/Icon Buttonclose.svg" id="close" class="icon close" />
                 </div>
             </div>
 
@@ -47,60 +49,184 @@
 
     <div class="main">
 
-        <aside>
-            <div class="logo">
-                Full logo
+        <aside id="aside">
+            <div class="logo ">
+                <h4 id="aside-tab-text" class="aside-tab-text">Full logo</h4>
+                
             </div>
 
             <ul class="aside-tabs">
-                <li>
+                <li class="aside-items">
                     <div class="icon-box"><img src="icons/Vectorlight.svg" class="icon" /></div> 
                     <span id="aside-tab-text" class="aside-tab-text">Home</span>
                 </li>
 
-                <li>
+                <li class="aside-items">
                     <div class="icon-box"><img src="icons/solar_calendar-linearlight.svg" class="icon" /></div> 
                     <span id="aside-tab-text" class="aside-tab-text">Events</span>
                 </li>
-
-                <li>
-                    <div class="icon-box"><img src="icons/double-chat-bubblelight.svg" class="icon" /></div> 
+                
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/Groupusers-s.svg" class="icon" /></div> 
                     <span id="aside-tab-text" class="aside-tab-text">Speakers</span>
                 </li>
 
-                <li>
+                <li class="aside-items">
                     <div class="icon-box"><img src="icons/solar_document-linearlight.svg" class="icon" /></div> 
                     <span id="aside-tab-text" class="aside-tab-text">Reports</span>
                 </li>
 
-                <li>
+                <li class="aside-items">
                     <div class="icon-box"><img src="icons/belllight.svg" class="icon" /></div> 
                     <span id="aside-tab-text" class="aside-tab-text">Notifications</span>
                 </li>
 
-                <li>
-                    <div class="icon-box"><img src="icons/double-chat-bubblelight.svg" class="icon" /></div> 
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/double-chat-bubble.svg" class="icon" /></div> 
                     <span id="aside-tab-text" class="aside-tab-text">Messages</span>
                 </li>
 
-                <li>
+                <li class="aside-items">
                     <div class="icon-box"><img src="icons/settings-2.svg" class="icon" /></div> 
                     <span id="aside-tab-text" class="aside-tab-text">Settings</span>
                 </li>
 
-                <li>
-                    <div class="icon-box"><img src="icons/double-chat-bubblelight.svg" class="icon" /></div> 
-                    <span id="aside-tab-text" class="aside-tab-text">Collapse</span>
+            
+
+                
+
+            </ul>
+
+            <ul class="aside-tabs">
+                <li class="aside-items" id="collapsible">
+                    <div class="icon-box"><img id="icon-rotate" src="icons/double-chevron-rightdarrow.svg" class="icon" /></div> 
+                    <span id="aside-tab-text"  class="aside-tab-text">Collapse</span>
                 </li>
 
-                <li>
-                    <div class="theme-btn">
-                        <div class="theme-btn-bob"></div>
+                <li class="aside-items theme-switch" id="theme-switch">
+
+                    <div id="dark-mode-toggle" class="theme-btn">
+                        <div id="theme-btn-bob" class="theme-btn-bob"></div>
                     </div>
-                    <span id ="aside-tab-text">Dark Mode</span>
+
+                    <span class="aside-tab-text" id ="aside-tab-text">Dark Mode</span>
+                
                 </li>
+
+
+                <li class="aside-items">
+
+                    <div class="avatar-div"><img src="icons/Avatarav.svg" class="avatar" /></div>
+                    
+                    <div>
+                        <P id="aside-tab-text" class="aside-tab-text"><small>Home</small></span>
+                        <P id="aside-tab-text" class="aside-tab-text"><small>Home</small></span>
+
+                    </div>
+
+                </li>
+
             </ul>
+
         </aside>
+
+
+
+
+
+        <!-- MOBILE SIDEBAR -->
+
+        <div id="sidebar" class="sidebar">
+            <div class="logo ">
+                <h4 id="aside-tab-text" class="aside-tab-text">Full logo</h4>
+                
+            </div>
+
+            <ul class="aside-tabs">
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/Vectorlight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Home</span>
+                </li>
+
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/solar_calendar-linearlight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Events</span>
+                </li>
+                
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/Groupusers-s.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Speakers</span>
+                </li>
+
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/solar_document-linearlight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Reports</span>
+                </li>
+
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/belllight.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Notifications</span>
+                </li>
+
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/double-chat-bubble.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Messages</span>
+                </li>
+
+                <li class="aside-items">
+                    <div class="icon-box"><img src="icons/settings-2.svg" class="icon" /></div> 
+                    <span id="aside-tab-text" class="aside-tab-text">Settings</span>
+                </li>
+
+            
+
+                
+
+            </ul>
+
+            <ul class="aside-tabs">
+                
+
+                <li class="aside-items theme-switch" id="theme-switch">
+
+                    <div id="dark-mode-toggle" class="theme-btn">
+                        <div id="theme-btn-bob" class="theme-btn-bob"></div>
+                    </div>
+
+                    <span class="aside-tab-text" id ="aside-tab-text">Dark Mode</span>
+                
+                </li>
+
+
+                <li class="aside-items">
+
+                    <div class="avatar-div"><img src="icons/Avatarav.svg" class="avatar" /></div>
+                    
+                    <div>
+                        <P id="aside-tab-text" class="aside-tab-text"><small>Home</small></span>
+                        <P id="aside-tab-text" class="aside-tab-text"><small>Home</small></span>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- MOBILE-SIDEBAR  END -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- MAIN DASHBOARD CONTENT -->
 
         <div class="dashboard">
 
@@ -206,6 +332,8 @@
 
                     <div class=" stat-cont">
                         <div class="graph-div">
+
+                            
                             <canvas id="eventChart" width="400" height="300"></canvas>
 
                             
@@ -220,28 +348,28 @@
         
                             <div class="carousel-slide">
 
-                                <div class="sliders">
+                                <div class="sliders slider-a">
                                     
-                                    <img src="images/Slide1.png" class="car-img" />
+                                    <!-- <img src="images/Slide1.png" class="car-img" /> -->
                                     <div class="caption-texts">
                                         <h4>Latest News & Updates</h4>
                                         <p>Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.</p>
                                     </div>
                                 </div>
 
-                                <div class="sliders">
+                                <div class="sliders slider-b">
                                     
-                                    <img src="images/slide2.jfif" class="car-img" />
+                                    <!-- <img src="images/slide2.jfif" class="car-img mobile-zoom" /> -->
                                     <div class="caption-texts">
                                         <h4>Latest News & Updates</h4>
                                         <p>Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.</p>
                                     </div>
                                 </div>
 
-                                <div class="sliders">
+                                <div class="sliders slider-c">
                                     
-                                    <img src="images/Slide (2).png" class="car-img zoomed" />
-                                    <div class="caption-text">
+                                    <!-- <img src="images/Slide (2).png" class="car-img mobile-zoom zoomed" /> -->
+                                    <div class="caption-texts">
                                         <h4>Latest News & Updates</h4>
                                         <p>Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.</p>
                                     </div>
