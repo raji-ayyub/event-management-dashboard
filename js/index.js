@@ -51,13 +51,12 @@ const eventsData = [
 
 
 
-  function populateTable(eventsData) {
+  function populateTable(events) {
 
     const tableBody = document.getElementById('eventsBody');
     tableBody.innerHTML = ''; 
 
-
-    eventsData.forEach(event => {
+    events.forEach(event => {
         const row =     `<li class="items-list">
                             <div class="event-list-tabs">
                                 <div class="event-list-name">
@@ -129,7 +128,7 @@ let currentPage = 1;
 let rowsPerPage = 10; 
 
 
-function displayEventsPage(eventsData, rowsPerPage, currentPage, sortOrder) {
+function displayEventsPage(events, rowsPerPage, currentPage, sortOrder) {
     const tableBody = document.querySelector('#eventsBody'); 
     tableBody.innerHTML = ''; 
 
@@ -179,7 +178,7 @@ function displayEventsPage(eventsData, rowsPerPage, currentPage, sortOrder) {
 
 
 // Generate pagination buttons dynamically
-function generatePaginationControls(eventsData, rowsPerPage) {
+function generatePaginationControls(events, rowsPerPage) {
     const paginationContainer = document.querySelector('.page-numbers');
     paginationContainer.innerHTML = ''; // Clear existing pagination
 
@@ -208,7 +207,7 @@ function generatePaginationControls(eventsData, rowsPerPage) {
             } else{
                 
 
-                displayEventsPage(eventsData, rowsPerPage, currentPage, selectedSort);
+                displayEventsPage(events, rowsPerPage, currentPage, selectedSort);
                 generatePaginationControls(eventsData, rowsPerPage);
 
                 filterRenderedItems()
@@ -277,20 +276,20 @@ eventsData.forEach(eventinf => {
 
 console.log(eventsPerMonth);
 
-const monthly = Object.keys(eventsPerMonth); 
-const eventCounting = Object.values(eventsPerMonth); 
+const monthly = Object.keys(eventsPerMonth); // ['Jan', 'Feb', 'Mar', ...]
+const eventCounting = Object.values(eventsPerMonth); // Counts for each month
 
 const ctx = document.getElementById('eventChart').getContext('2d');
 
 const eventChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: monthly, 
+        labels: monthly, // Use the fixed month labels
         datasets: [{
             label: 'Monthly Rate',
             data: eventCounting,
             backgroundColor: 'rgba(128, 90, 213, 0.7)',
-            borderColor: 'rgba(128, 90, 255, 1)', 
+            borderColor: 'rgba(128, 90, 213, 1)', 
             borderWidth: 1 
         }]
 
