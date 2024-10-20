@@ -198,7 +198,7 @@ function generatePaginationControls(events, rowsPerPage) {
             
             
             const searchB = document.getElementById("search");
-            const selectedSort = sortFilter.value; 
+            const selectedSort = sortFilter.value.trim().toLowerCase; 
 
             if(searchB.value !== "") {
 
