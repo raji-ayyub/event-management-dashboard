@@ -2,6 +2,9 @@
 :root {
 
     --bg-color: #ffffff;
+    --bg-color-2: transparent;
+
+
     --border-white: #F2F2F7;
  
     --text-color: #000;
@@ -15,11 +18,14 @@
     --primary-select: #ADA9BB;
 
 
-
+    --as-tab-hover: #FCF7FF;
 
     --stat-green: #D1FAE5;
 
     --stat-blue: #DBEAFE;
+
+
+    --ev-nav-color: #F1F5F9;
 
 
   }
@@ -30,6 +36,9 @@
   .dark-mode {
 
     --bg-color: #484554;
+    --bg-color-2: #222128;
+
+
     --border-white: #f2f2f712;
 
     --text-color: #fff;
@@ -43,10 +52,14 @@
 
     --primary-select: #6A6676;
 
+    --as-tab-hover: #8576FF;
+
 
     --stat-green: transparent;
 
     --stat-blue: transparent;
+
+    --ev-nav-color: #6A6676;
 
   }
   
@@ -68,10 +81,14 @@
 }
 
 
+input, select{
+  background-color: transparent;
+}
+
 
 body {
 
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-2);
     color: var(--text-color);
     font-size: 15px;
 
@@ -82,6 +99,7 @@ body {
    
     width: 100%;
     border-bottom: 2px solid var(--border-white);
+    background-color: var(--bg-color);
 
   }
  
@@ -161,6 +179,7 @@ body {
     width: 100%;
     height: 88px;
     border: 1px solid var(--border-white);
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
 
@@ -216,6 +235,7 @@ body {
     min-height: 284px;
     height: 284px;
     border: 1px solid var(--border-white);
+    background-color: var(--bg-color);
   }
 
 
@@ -436,13 +456,22 @@ body {
     height: 2rem;
     gap: 5px;
   }
+
+  .sort{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
   
   .search-div{
     width: 100%;
     height: 2rem;
     border: 1px solid var(--border-white);
+    background-color: var(--bg-color);
     display: flex;
   }
+
   .search{
     width: 90%;
     height: 2rem;
@@ -462,6 +491,18 @@ body {
     width: 100%;
     
     border: 1px solid var(--border-white);
+    background-color: var(--bg-color);
+    flex: 0 0 auto;
+    position: relative;
+    display: inline-block;
+  }
+
+  .recency-btn{
+    max-width: 140px;
+    height: 2rem;
+
+    border: 1px solid var(--border-white);
+    background-color: var(--bg-color);
     
     flex: 0 0 auto;
     position: relative;
@@ -484,10 +525,7 @@ body {
     justify-content: space-between;
   }
 
-  .dropdowns button::after {
-    content: '⮟';
-   
-  }
+ 
 
   .options {
     opacity: 0;
@@ -510,6 +548,7 @@ body {
     padding: 10px 0;
     cursor: pointer;
     border-bottom: 1px solid var(--border-white);
+    background-color: var(--bg-color);
     width: 90%;
     margin: 0 auto;
   }
@@ -530,7 +569,7 @@ body {
 
   
 
-  .sorting-nav div{
+  .export-div{
     width: 100%;
     height: 2rem;
     
@@ -539,39 +578,29 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-  .period{
-    padding: 0 0.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-    border: 1px solid var(--border-white);
-  }
-
-  .period .option{
-    width: 7rem;
-   
-  }
-
+ 
   .export{
-    width: 6rem;
+    width: 100px;
     height: 2rem;
     border: 1px solid var(--border-white);
-    background-color: transparent;
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
+    cursor: pointer;
     align-items: center;
     gap: 7px;
   }
 
   .lined{
     border: 1px solid var(--border-white);
-    max-width: 2rem;
+    background-color: var(--bg-color);
+    width: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     height: 2rem;
+    flex: 0 0 auto;
    
   }
 
@@ -588,7 +617,7 @@ body {
     height: 3rem;
     display: flex;
     align-items: center;
-    background-color: rgb(234, 234, 244);
+    background-color: var(--ev-nav-color);
   }
 
   .status-header-tab{
@@ -611,19 +640,37 @@ body {
 
   .events-list li{
     width: 100%;
+    height: 44px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     align-items: center;
+    
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
+  .events-list li:hover{
+    background-color: var(--bg-color-2);
   }
 
   .mobile-collapse-btn{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    flex: 0 0 auto;
+    
+  }
+  .mobile-collapse-btn img{
+    width: 1.5rem;
   }
 
 
   .event-list-name{
     display: flex;
     align-items: center;
+    font-size: 14px;
   }
 
 
@@ -640,8 +687,9 @@ body {
 
   .completed, .inprogress{
     
-    height: 1.2rem;
-    width: 4.5rem;
+    height: 19px;
+    width: 81px;
+    min-width: 81px;
     border-radius: 4rem;
     color: var(--text-color);
     display: flex;
@@ -658,6 +706,10 @@ body {
     background-color: var(--stat-blue);
     border: 2px solid #DBEAFE;
 
+  }
+
+  .stat-bob{
+    display: none;
   }
 
 /* -------------------- */
@@ -688,14 +740,19 @@ body {
   .numbers-btn{
     width: 2rem;
     height: 2rem;
+    background-color: var(--bg-color);
+    cursor: pointer;
+  }
 
+  .numbers-btn img{
+    width: 1.3rem;
   }
   .page-numbers{
     display: flex;
     height: 2rem;
     gap: 8px;
     width: 7rem;
-    border: 1px solid rgba(255, 0, 0, 0.101);
+    
     overflow: auto;
   }
   .page-numbers::-webkit-scrollbar{
@@ -706,11 +763,18 @@ body {
     width: 2rem;
     height: 2rem;
     border-radius: 4rem;
-    background-color: rgb(235, 235, 235);
+    background-color: var(--bg-color);
     display: flex;
     align-items: center;
     flex: 0 0 auto;
     justify-content: center;
+    cursor: pointer;
+  }
+
+  
+
+  .current{
+    background-color: var(--primary-color);
   }
 
 
@@ -718,6 +782,7 @@ body {
     width: 5rem;
     height: 2rem;
     border: 1px solid var(--border-white);
+    background-color: var(--bg-color);
     
   }
 
@@ -729,6 +794,8 @@ body {
     bottom: 0;
     left: 0;
     background-color: var(--bg-color);
+    height: 4rem;
+    border: 1px solid white;
   }
 
   .footer-tabs{
@@ -905,6 +972,10 @@ cursor: pointer;
 transition: all 0.5s ease-in-out;
 }
 
+.aside-items:hover{
+  background-color: var(--as-tab-hover);
+}
+
 .aside-items-collapsed{
 width: 2rem;
 display: flex;
@@ -998,9 +1069,10 @@ left: calc(100% - 0.8rem);
         width: 240px;
         display: flex;
         flex-direction: column;
-        border: 1px solid rgb(241, 163, 163);
-
+        
+        gap: 10px;
         transition: all 0.5s ease-in-out;
+        background-color: var(--bg-color);
 
         
     }
@@ -1028,6 +1100,7 @@ left: calc(100% - 0.8rem);
       display: flex;
       flex-direction: column;
       font-size: 14px;
+      gap: 8px;
 
       align-items: center;
 
@@ -1111,12 +1184,15 @@ left: calc(100% - 0.8rem);
 
     section{
         padding: 1rem 0;
+        
     }
 
     .container{
-     width: 90%;
+     max-width: 95%;
+     width: 95%;
       
       margin: 0 auto;
+      
     }
 
 
@@ -1144,7 +1220,9 @@ left: calc(100% - 0.8rem);
       display: flex;
       flex-direction: row;
      
+      width: 55%;
       align-items: center;
+      flex: 0 0 auto;
       
       
     }
@@ -1155,18 +1233,28 @@ left: calc(100% - 0.8rem);
       
     }
 
-    .select-div{
-      width: 40%;
-
-    }
-
-    .result-div{
-      width: 60%;
+  
+    .twi-navs{
+      width: 100%;
       
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .result-div h2{
-      margin-right: 3rem;
+
+    .tabs-nav{
+      
+      flex: 0 0 auto;
+      width: 70%;
     }
+   
+    .result-div{
+      width: 30%;
+    
+      display: flex;
+      justify-content: center;
+    }
+    
     
 
     .search-div{
@@ -1193,6 +1281,16 @@ left: calc(100% - 0.8rem);
       height: 2rem;
     }
 
+    .recency-btn{
+      width: 140px;
+      height: 2rem;
+      border: 1px solid var(--border-white);
+      cursor: pointer;
+      
+    }
+
+    
+
     .dropdowns button {
   
       height: 2rem;
@@ -1205,10 +1303,7 @@ left: calc(100% - 0.8rem);
       
     }
 
-    .dropdowns button::after {
-      content: '⮟';
-      
-    }
+  
 
     .dropdowns li{
       width: 5rem;
@@ -1223,13 +1318,36 @@ left: calc(100% - 0.8rem);
 
 
     .sorting-nav{
-      width: 60%;
+      width: 100%;
+
+     display: flex;
+
+     justify-content: center;
+     align-items: center;
+     gap: 5px;
      
-     
+    }
+
+    .sort{
+      
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      
     }
 
     .export{
       width: 4rem;
+      margin: 0;
+      
+    }
+    .export-div{
+      width: 10rem;
+      display: flex;
+      justify-content: space-between;
+     
     }
     .export p{
       display: none
@@ -1257,7 +1375,7 @@ left: calc(100% - 0.8rem);
     .chart-cover{
       width: 474px;
       height: 240px;
-      border: 1px solid red;
+      
       display: flex;
       justify-content: center;
     }
@@ -1283,7 +1401,7 @@ left: calc(100% - 0.8rem);
 
 
     .event-container{
-      width: 90%;
+      width: 95%;
       margin: 0 auto;
     }
 
@@ -1294,13 +1412,14 @@ left: calc(100% - 0.8rem);
 
     .event-tabs{
       width: 95%;
+      
     }
 
     .event-list-tabs{
       justify-content: space-between;
       height: 2rem;
       align-items: center;
-      width: 95%;
+      width: 98%;
       text-align: left;
     }
 
@@ -1313,6 +1432,12 @@ left: calc(100% - 0.8rem);
       width: 30%;
       
       text-align: left;
+    }
+
+    .events-list li{
+      height: 48px;
+      display: flex; 
+      align-items: center;
     }
    
     .desktop-middle-tabs{
@@ -1331,6 +1456,31 @@ left: calc(100% - 0.8rem);
 
     .mobile-collapse-btn{
       display: none;
+    }
+
+
+    .completed, .inprogress{
+    
+      height: 23px;
+      width: 97px;
+      min-width: 97px;
+      border-radius: 4rem;
+      color: var(--text-color);
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .stat-bob{
+      display: block;
+      width: 5px;
+      height: 4px;
+      background-color: rgb(43, 226, 220);
+      border-radius: 1rem;
+      flex: 0 0 auto;
     }
 
 
