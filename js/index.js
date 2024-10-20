@@ -681,3 +681,44 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const eventsListNameBtn = document.querySelectorAll(".event-list-name");
+const modalCard = document.getElementById("modal");
+
+const closeModal = document.getElementById("close-modal");
+
+eventsListNameBtn.forEach( eventBtn => {
+
+    eventBtn.addEventListener("click", function() {
+        modalCard.style.display="flex";
+    })
+
+
+   
+});
+
+
+closeModal.addEventListener("click", function() {
+    modalCard.style.display="none";
+})
