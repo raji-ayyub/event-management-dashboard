@@ -50,12 +50,14 @@ const eventsData = [
 
 
 
-  function populateTable(events) {
+
+  function populateTable(eventsData) {
 
     const tableBody = document.getElementById('eventsBody');
     tableBody.innerHTML = ''; 
 
-    events.forEach(event => {
+
+    eventsData.forEach(event => {
         const row =     `<li class="items-list">
                             <div class="event-list-tabs">
                                 <div class="event-list-name">
@@ -100,7 +102,17 @@ populateEventNameSelect(eventsData)
 
 // PAGINATION BASED DISPLAY (EVENTS) and Events sorting ------------------------
 
-const sortFilter = document.getElementById('sortFilter');
+
+let selectedSort = "Most Recent"
+
+// const sortFilter = document.getElementById('sortFilter');
+
+document.querySelector('#sortFilter').addEventListener('change', function() {
+    selectedSort = this.value; 
+    displayEventsPage(eventsData, rowsPerPage, currentPage, selectedSort);
+    
+    generatePaginationControls(eventsData, rowsPerPage);
+});
 
 
 sortFilter.addEventListener('change', (event) => {
@@ -110,30 +122,30 @@ sortFilter.addEventListener('change', (event) => {
     generatePaginationControls(eventsData, rowsPerPage); 
 });
 
-
+console.log(`selected sortFilter is : ${sortFilter}`)
 
 
 let currentPage = 1; 
 let rowsPerPage = 10; 
 
 
-function displayEventsPage(events, rowsPerPage, currentPage, sortOrder = 'Most Recent') {
+function displayEventsPage(eventsData, rowsPerPage, currentPage, sortOrder) {
     const tableBody = document.querySelector('#eventsBody'); 
     tableBody.innerHTML = ''; 
 
 
 
      // Sort events
-     const sortedEvents = [...events].sort((a, b) => {
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
+     const sortedEvents = [...eventsData];
+   
 
         if (sortOrder === 'Most Recent') {
-            return dateB - dateA; // Most recent first
+            sortedEvents.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by most recent date
+
         } else if (sortOrder === 'Oldest First') {
-            return dateA - dateB; // Oldest first
+            sortedEvents.sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort by oldest date first
         }
-    });
+  
 
     
     const startIndex = (currentPage - 1) * rowsPerPage;
@@ -165,12 +177,13 @@ function displayEventsPage(events, rowsPerPage, currentPage, sortOrder = 'Most R
     filterRenderedItems()
 }
 
+
 // Generate pagination buttons dynamically
-function generatePaginationControls(events, rowsPerPage) {
+function generatePaginationControls(eventsData, rowsPerPage) {
     const paginationContainer = document.querySelector('.page-numbers');
     paginationContainer.innerHTML = ''; // Clear existing pagination
 
-    const totalPages = Math.ceil(events.length / rowsPerPage);
+    const totalPages = Math.ceil(eventsData.length / rowsPerPage);
 
     for (let i = 1; i <= totalPages; i++) {
         const pageBtn = document.createElement('li');
@@ -195,8 +208,8 @@ function generatePaginationControls(events, rowsPerPage) {
             } else{
                 
 
-                displayEventsPage(events, rowsPerPage, currentPage, selectedSort);
-                generatePaginationControls(events, rowsPerPage);
+                displayEventsPage(eventsData, rowsPerPage, currentPage, selectedSort);
+                generatePaginationControls(eventsData, rowsPerPage);
 
                 filterRenderedItems()
             }
@@ -214,8 +227,10 @@ document.querySelector('#rows-select').addEventListener('change', function() {
     rowsPerPage = parseInt(this.value); 
     currentPage = 1; // default page
 
-    displayEventsPage(eventsData, rowsPerPage, currentPage, selectedSort);
-    generatePaginationControls(eventsData, rowsPerPage); // Regenerate pagination
+    const filteredEvents = filterRenderedItems(eventsData);
+
+    displayEventsPage(filteredEvents, rowsPerPage, currentPage);
+    generatePaginationControls(filteredEvents, rowsPerPage); // Regenerate pagination
     
 
    
@@ -229,6 +244,8 @@ displayEventsPage(eventsData, rowsPerPage, 1);
 filterRenderedItems()
 
 // --------------------------------------------------------
+
+
 
 
 
@@ -260,22 +277,23 @@ eventsData.forEach(eventinf => {
 
 console.log(eventsPerMonth);
 
-const monthly = Object.keys(eventsPerMonth); // ['Jan', 'Feb', 'Mar', ...]
-const eventCounting = Object.values(eventsPerMonth); // Counts for each month
+const monthly = Object.keys(eventsPerMonth); 
+const eventCounting = Object.values(eventsPerMonth); 
 
 const ctx = document.getElementById('eventChart').getContext('2d');
 
 const eventChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: monthly, // Use the fixed month labels
+        labels: monthly, 
         datasets: [{
             label: 'Monthly Rate',
             data: eventCounting,
             backgroundColor: 'rgba(128, 90, 213, 0.7)',
-            borderColor: 'rgba(128, 90, 213, 1)', 
+            borderColor: 'rgba(128, 90, 255, 1)', 
             borderWidth: 1 
         }]
+
     },
     options: {
         responsive: true,
