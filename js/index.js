@@ -520,7 +520,7 @@ function filterEvents() {
 
 
 document.querySelector('#search-btn').addEventListener('click', function() {
-    const searchedDate = document.getElementById("search").value;
+    const searchedDate = document.getElementById("search").value.trim().toLowerCase;
 
     if(searchedDate !== "") {
         filterEvents();
