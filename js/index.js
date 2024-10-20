@@ -224,7 +224,7 @@ function generatePaginationControls(events, rowsPerPage) {
 
 document.querySelector('#rows-select').addEventListener('change', function() {
     rowsPerPage = parseInt(this.value); 
-    currentPage = 1; // default page
+    currentPage = 1; 
 
     const filteredEvents = filterRenderedItems(eventsData);
 
@@ -276,8 +276,8 @@ eventsData.forEach(eventinf => {
 
 console.log(eventsPerMonth);
 
-const monthly = Object.keys(eventsPerMonth); // ['Jan', 'Feb', 'Mar', ...]
-const eventCounting = Object.values(eventsPerMonth); // Counts for each month
+const monthly = Object.keys(eventsPerMonth); 
+const eventCounting = Object.values(eventsPerMonth); 
 
 const ctx = document.getElementById('eventChart').getContext('2d');
 
