@@ -75,9 +75,12 @@ const eventsData = [
                             <div class="list-collapsible ">
 
                                     <p class="e-date">${event.date}</p>
-                                    <p>${event.speaker}</p>
 
                                     <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
+
+                                    <p>${event.speaker}</p>
+
+                                    
                                 
                                 </div>
 
@@ -186,9 +189,9 @@ function displayEventsPage(events, rowsPerPage, currentPage, sortOrder) {
                             <div class="list-collapsible ">
 
                                     <p class="e-date">${event.date}</p>
+                                    <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
                                     <p>${event.speaker}</p>
 
-                                    <i class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </i>
                                 
                                 </div>
 
@@ -536,9 +539,11 @@ function filterEvents() {
                                 <div class="list-collapsible ">
 
                                     <p class="e-date">${event.date}</p>
-                                    <p>${event.speaker}</p>
 
                                     <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
+
+                                    <p>${event.speaker}</p>
+
                                 
                                 </div>
 
@@ -787,11 +792,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             
             
-            const hiddenInfos = eventList.querySelector(".hidden-infos");
-
-            hiddenInfos.style.width = "80px";
-
-
+           
 
             const collapsibleListContent = eventList.querySelector(".list-collapsible");
 

@@ -1220,6 +1220,11 @@ justify-content: center;
   overflow: hidden;
 }
 
+.hidden-infos{
+  width: 0;
+  overflow: hidden;
+}
+
 .collapse-down{
   display: flex;
   height: 2rem;
