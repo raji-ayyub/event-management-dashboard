@@ -72,6 +72,8 @@ const eventsData = [
                             </div>
                         </li>`;
         tableBody.innerHTML += row;
+
+        modalCard();
     });
 }
 
@@ -170,6 +172,8 @@ function displayEventsPage(events, rowsPerPage, currentPage, sortOrder) {
                             </div>
                         </li>`;
         tableBody.innerHTML += row;
+
+        modalCard();
     });
 
 
@@ -492,6 +496,7 @@ function filterEvents() {
         });
 
         if (filteredEvents.length > 0) {
+
             filteredEvents.forEach(event => {
                 const row = `<li class="items-list">
                                 <div class="event-list-tabs">
@@ -509,6 +514,8 @@ function filterEvents() {
                                 </div>
                             </li>`;
                 tableBody.innerHTML += row;
+
+                modalCard();
             });
         } else {
             tableBody.innerHTML = '<li>No events found for the selected month.</li>';
@@ -699,26 +706,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+// Modal popops
 
 
 
 
-const eventsListNameBtn = document.querySelectorAll(".event-list-name");
-const modalCard = document.getElementById("modal");
 
-const closeModal = document.getElementById("close-modal");
-
-eventsListNameBtn.forEach( eventBtn => {
-
-    eventBtn.addEventListener("click", function() {
-        modalCard.style.display="flex";
-    })
+    
+    function modalCard() {
 
 
-   
-});
+        
+
+        const eventListDiv = document.querySelectorAll(".items-list");
+
+        const modalCard = document.getElementById("modal");
+
+        const modalEvName = document.querySelector(".name h2")
+        const modalEvDate = document.querySelector(".name p")
+        const modalEvDescr = document.querySelector(".card.des")
+
+        const closeModal = document.getElementById("close-modal");
+
+        eventListDiv.forEach( eventList => {
+
+            
+
+            const eventsListNameBtn = eventList.querySelector(".event-list-name p");
+            const eventsListDate = eventList.querySelector(".e-date");
 
 
-closeModal.addEventListener("click", function() {
-    modalCard.style.display="none";
-})
+            eventsListNameBtn.addEventListener("click", function() {
+
+                modalEvName.textContent = eventsListNameBtn.textContent;
+                modalEvDate.textContent = eventsListDate.textContent;
+
+
+                modalCard.style.display="flex";
+
+                setTimeout(() => {
+                    modalCard.style.opacity = "1";
+                }, 500);
+            })
+
+
+        
+        });
+
+
+        closeModal.addEventListener("click", function() {
+            modalCard.style.display="none";
+        })
+
+
+    }
+
+    modalCard();
+
+
