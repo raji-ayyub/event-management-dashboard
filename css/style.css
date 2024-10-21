@@ -21,8 +21,12 @@
     --as-tab-hover: #FCF7FF;
 
     --stat-green: #D1FAE5;
-
     --stat-blue: #DBEAFE;
+
+
+    --stat-bob-green: #10B981;
+
+    --stat-bob-blue: #3B82F6;
 
 
     --ev-nav-color: #F1F5F9;
@@ -30,6 +34,8 @@
     --bob-bg: #E2E8F0;
 
     --modal-buttons-bg: #F8FAFC;
+
+    --collapsible-bg: #F5F5F5;
 
 
   }
@@ -53,21 +59,26 @@
 
 
     --primary-dark: #484554;
-
     --primary-select: #6A6676;
 
     --as-tab-hover: #8576FF;
 
 
     --stat-green: transparent;
-
     --stat-blue: transparent;
+
+    --stat-bob-green: #D1FAE5;
+    --stat-bob-blue: #DBEAFE;
+
+
 
     --ev-nav-color: #6A6676;
 
     --bob-bg: #8576FF;
 
     --modal-buttons-bg: #ADA9BB;
+
+    --collapsible-bg: #383544;
 
   }
   
@@ -95,6 +106,10 @@ input, select{
   background-color: transparent;
 }
 
+
+#vector{
+  stroke: white;
+}
 
 body {
 
@@ -720,12 +735,12 @@ body {
     margin-top: 5px;
   }
   .completed{
-    background-color: var(--stat-green);
-    border: 2px solid #D1FAE5;
+    background-color: #10B981;
+    border: 2px solid #10B981;
   }
   .inprogress{
-    background-color: var(--stat-blue);
-    border: 2px solid #DBEAFE;
+    background-color: #3B82F6;
+    border: 2px solid #3B82F6;
 
   }
 
@@ -762,6 +777,7 @@ body {
     width: 2rem;
     height: 2rem;
     background-color: var(--bg-color);
+    border: 1px solid var(--border-white);
     cursor: pointer;
   }
 
@@ -1209,14 +1225,14 @@ justify-content: center;
 
 .list-collapsible{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 0;
   width: 100%;
   margin: 0 auto;
   flex-direction: row-reverse;
   
-  background-color: var(--primary-dark);
+  background-color: #F5F5F5;
   overflow: hidden;
 }
 
@@ -1227,7 +1243,7 @@ justify-content: center;
 
 .collapse-down{
   display: flex;
-  height: 2rem;
+  height: 52px;
 }
 
 .icon-box{
@@ -1236,6 +1252,10 @@ justify-content: center;
 
 .rotate-90{
   transform: rotate(90deg);
+}
+
+.rotate-180{
+  transform: rotate(180deg);
 }
 /* --------------------- */
 
@@ -1949,11 +1969,30 @@ left: calc(100% - 0.8rem);
       font-size: 12px;
     }
 
-    .stat-bob{
+    .completed{
+      background-color: var(--stat-green);
+      border: 2px solid #D1FAE5;
+    }
+    .inprogress{
+      background-color: var(--stat-blue);
+      border: 2px solid #DBEAFE;
+  
+    }
+
+    .completed .stat-bob{
       display: block;
-      width: 5px;
-      height: 4px;
-      background-color: rgb(43, 226, 220);
+      width: 6px;
+      height: 6px;
+      background-color: var(--stat-bob-green) ;
+      border-radius: 1rem;
+      flex: 0 0 auto;
+    }
+
+    .inprogress .stat-bob{
+      display: block;
+      width: 6px;
+      height: 6px;
+      background-color: var(--stat-bob-blue);
       border-radius: 1rem;
       flex: 0 0 auto;
     }
