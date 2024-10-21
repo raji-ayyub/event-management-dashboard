@@ -5,42 +5,43 @@
 // DEMO RANDOM DATA ---------------------------------------
 
 const eventsData = [
-    { eventName: "Cloud Innovation Summit", date: "2024-01-05", speaker: "Sundar Pichai", status: "Completed" },
-    { eventName: "Tech Leaders Conference", date: "2024-01-10", speaker: "Satya Nadella", status: "completed" },
-    { eventName: "AI & Future Technologies", date: "2024-01-15", speaker: "Jane Doe", status: "inprogress" },
-    { eventName: "Web Development Workshop", date: "2024-01-25", speaker: "Mark Zuckerberg", status: "completed" },
-    { eventName: "Cybersecurity Roundtable", date: "2024-02-01", speaker: "Sheryl Sandberg", status: "Completed" },
-    { eventName: "Data Science Symposium", date: "2024-02-05", speaker: "Elon Musk", status: "completed" },
-    { eventName: "Blockchain Bootcamp", date: "2024-02-10", speaker: "Vitalik Buterin", status: "Completed" },
-    { eventName: "UX/UI Design Forum", date: "2024-02-15", speaker: "Marissa Mayer", status: "inprogress" },
-    { eventName: "Startup Pitch Day", date: "2024-03-20", speaker: "Peter Thiel", status: "Completed" },
-    { eventName: "Cloud Security Summit", date: "2024-04-01", speaker: "Diane Greene", status: "inprogress" },
-    { eventName: "Internet of Things Expo", date: "2024-05-05", speaker: "Tim Cook", status: "Completed" },
-    { eventName: "Mobile Development Workshop", date: "2024-05-10", speaker: "Sundar Pichai", status: "inprogress" },
-    { eventName: "Agile Methodologies Conference", date: "2024-05-15", speaker: "Jack Dorsey", status: "Completed" },
-    { eventName: "Digital Marketing Strategies", date: "2024-05-20", speaker: "Susan Wojcicki", status: "inprogress" },
-    { eventName: "Artificial Intelligence Summit", date: "2024-05-25", speaker: "Andrew Ng", status: "inprogress" },
-    { eventName: "Fintech Innovations Forum", date: "2024-05-28", speaker: "Christine Lagarde", status: "inprogress" },
-    { eventName: "Remote Work Conference", date: "2024-06-05", speaker: "Reed Hastings", status: "inprogress" },
-    { eventName: "Tech for Good Summit", date: "2024-06-10", speaker: "Jeff Bezos", status: "inprogress" },
-    { eventName: "Ethical Hacking Workshop", date: "2024-07-01", speaker: "Kevin Mitnick", status: "Completed" },
-    { eventName: "Open Source Forum", date: "2024-08-02", speaker: "Linus Torvalds", status: "completed" },
-    { eventName: "Machine Learning Symposium", date: "2024-08-05", speaker: "Demis Hassabis", status: "Completed" },
-    { eventName: "Software Engineering Conference", date: "2024-08-10", speaker: "Larry Page", status: "inprogress" },
-    { eventName: "Product Management Workshop", date: "2024-08-15", speaker: "Eric Schmidt", status: "Completed" },
-    { eventName: "DevOps Summit", date: "2024-09-05", speaker: "Werner Vogels", status: "inprogress" },
-    { eventName: "Virtual Reality Expo", date: "2024-09-10", speaker: "Palmer Luckey", status: "Completed" },
-    { eventName: "Tech Innovations Conference", date: "2024-09-20", speaker: "Tony Fadell", status: "inprogress" },
-    { eventName: "Cloud Migration Workshop", date: "2024-10-01", speaker: "Ava Perez", status: "inprogress" },
-    { eventName: "Data Visualization Forum", date: "2024-10-10", speaker: "Alexis Ohanian", status: "inprogress" },
-    { eventName: "Internet Security Conference", date: "2024-10-15", speaker: "Charlotte Johnson", status: "Completed" },
-    { eventName: "Tech Diversity Summit", date: "2024-11-01", speaker: "Melinda Gates", status: "inprogress" },
-    { eventName: "Sustainable Tech Forum", date: "2024-12-01", speaker: "Daniel Robinson", status: "Completed" },
-    { eventName: "E-Commerce Innovations Workshop", date: "2024-12-10", speaker: "Emily Martinez", status: "inprogress" },
-    { eventName: "Smart Cities Conference", date: "2024-12-15", speaker: "Oliver Davis", status: "Completed" },
-    { eventName: "Digital Transformation Summit", date: "2024-12-20", speaker: "Mia Thomas", status: "inprogress" },
-    { eventName: "Tech Education Forum", date: "2024-12-25", speaker: "William Clark", status: "Completed" }
+    { eventName: "Cloud Innovation Summit", date: "2024-01-05", speaker: "Sundar Pichai", status: "Completed", description: "Exploring the future of cloud technologies.", attendees: 300 },
+    { eventName: "Tech Leaders Conference", date: "2024-01-10", speaker: "Satya Nadella", status: "completed", description: "Leadership insights in the tech industry.", attendees: 450 },
+    { eventName: "AI & Future Technologies", date: "2024-01-15", speaker: "Jane Doe", status: "inprogress", description: "Advancements in AI and emerging technologies.", attendees: 200 },
+    { eventName: "Web Development Workshop", date: "2024-01-25", speaker: "Mark Zuckerberg", status: "completed", description: "Hands-on learning for web developers.", attendees: 250 },
+    { eventName: "Cybersecurity Roundtable", date: "2024-02-01", speaker: "Sheryl Sandberg", status: "Completed", description: "Roundtable on the latest cybersecurity trends.", attendees: 350 },
+    { eventName: "Data Science Symposium", date: "2024-02-05", speaker: "Elon Musk", status: "completed", description: "Deep dive into data science innovations.", attendees: 500 },
+    { eventName: "Blockchain Bootcamp", date: "2024-02-10", speaker: "Vitalik Buterin", status: "Completed", description: "Understanding blockchain technology.", attendees: 300 },
+    { eventName: "UX/UI Design Forum", date: "2024-02-15", speaker: "Marissa Mayer", status: "inprogress", description: "The latest in UX/UI design strategies.", attendees: 220 },
+    { eventName: "Startup Pitch Day", date: "2024-03-20", speaker: "Peter Thiel", status: "Completed", description: "Startups pitching their innovative ideas.", attendees: 400 },
+    { eventName: "Cloud Security Summit", date: "2024-04-01", speaker: "Diane Greene", status: "inprogress", description: "Ensuring security in cloud environments.", attendees: 250 },
+    { eventName: "Internet of Things Expo", date: "2024-05-05", speaker: "Tim Cook", status: "Completed", description: "Showcasing IoT advancements.", attendees: 350 },
+    { eventName: "Mobile Development Workshop", date: "2024-05-10", speaker: "Sundar Pichai", status: "inprogress", description: "Workshop on mobile app development.", attendees: 230 },
+    { eventName: "Agile Methodologies Conference", date: "2024-05-15", speaker: "Jack Dorsey", status: "Completed", description: "Best practices in agile development.", attendees: 275 },
+    { eventName: "Digital Marketing Strategies", date: "2024-05-20", speaker: "Susan Wojcicki", status: "inprogress", description: "Innovative digital marketing strategies.", attendees: 220 },
+    { eventName: "Artificial Intelligence Summit", date: "2024-05-25", speaker: "Andrew Ng", status: "inprogress", description: "Exploring AI advancements and trends.", attendees: 400 },
+    { eventName: "Fintech Innovations Forum", date: "2024-05-28", speaker: "Christine Lagarde", status: "inprogress", description: "Innovations shaping the future of fintech.", attendees: 350 },
+    { eventName: "Remote Work Conference", date: "2024-06-05", speaker: "Reed Hastings", status: "inprogress", description: "The evolution of remote work models.", attendees: 260 },
+    { eventName: "Tech for Good Summit", date: "2024-06-10", speaker: "Jeff Bezos", status: "inprogress", description: "Technology driving social good.", attendees: 290 },
+    { eventName: "Ethical Hacking Workshop", date: "2024-07-01", speaker: "Kevin Mitnick", status: "Completed", description: "Hands-on ethical hacking training.", attendees: 210 },
+    { eventName: "Open Source Forum", date: "2024-08-02", speaker: "Linus Torvalds", status: "completed", description: "Discussions on open-source software.", attendees: 380 },
+    { eventName: "Machine Learning Symposium", date: "2024-08-05", speaker: "Demis Hassabis", status: "Completed", description: "Symposium on machine learning advancements.", attendees: 410 },
+    { eventName: "Software Engineering Conference", date: "2024-08-10", speaker: "Larry Page", status: "inprogress", description: "Engineering solutions for modern software.", attendees: 330 },
+    { eventName: "Product Management Workshop", date: "2024-08-15", speaker: "Eric Schmidt", status: "Completed", description: "Best practices in product management.", attendees: 245 },
+    { eventName: "DevOps Summit", date: "2024-09-05", speaker: "Werner Vogels", status: "inprogress", description: "Latest trends in DevOps.", attendees: 400 },
+    { eventName: "Virtual Reality Expo", date: "2024-09-10", speaker: "Palmer Luckey", status: "Completed", description: "Showcase of virtual reality technologies.", attendees: 500 },
+    { eventName: "Tech Innovations Conference", date: "2024-09-20", speaker: "Tony Fadell", status: "inprogress", description: "Exploring cutting-edge tech innovations.", attendees: 300 },
+    { eventName: "Cloud Migration Workshop", date: "2024-10-01", speaker: "Ava Perez", status: "inprogress", description: "Best practices in cloud migration.", attendees: 240 },
+    { eventName: "Data Visualization Forum", date: "2024-10-10", speaker: "Alexis Ohanian", status: "inprogress", description: "Exploring new trends in data visualization.", attendees: 310 },
+    { eventName: "Internet Security Conference", date: "2024-10-15", speaker: "Charlotte Johnson", status: "Completed", description: "Protecting internet infrastructure.", attendees: 320 },
+    { eventName: "Tech Diversity Summit", date: "2024-11-01", speaker: "Melinda Gates", status: "inprogress", description: "Promoting diversity in the tech sector.", attendees: 350 },
+    { eventName: "Sustainable Tech Forum", date: "2024-12-01", speaker: "Daniel Robinson", status: "Completed", description: "Sustainable technology innovations.", attendees: 230 },
+    { eventName: "E-Commerce Innovations Workshop", date: "2024-12-10", speaker: "Emily Martinez", status: "inprogress", description: "Exploring the future of e-commerce.", attendees: 290 },
+    { eventName: "Smart Cities Conference", date: "2024-12-15", speaker: "Oliver Davis", status: "Completed", description: "Innovations in smart city development.", attendees: 400 },
+    { eventName: "Digital Transformation Summit", date: "2024-12-20", speaker: "Mia Thomas", status: "inprogress", description: "Driving digital transformation strategies.", attendees: 270 },
+    { eventName: "Tech Education Forum", date: "2024-12-25", speaker: "William Clark", status: "Completed", description: "The future of tech education.", attendees: 320 }
 ];
+
 
 
 // RANDOM DATA END -------------------------------
@@ -70,6 +71,17 @@ const eventsData = [
                                 </div>
                                 <span class="status ${event.status.toLowerCase()}"> <span class="stat-bob"></span> ${event.status}</span>
                             </div>
+
+                            <div class="list-collapsible ">
+
+                                    <p class="e-date">${event.date}</p>
+                                    <p>${event.speaker}</p>
+
+                                    <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
+                                
+                                </div>
+
+
                         </li>`;
         tableBody.innerHTML += row;
 
@@ -123,7 +135,7 @@ sortFilter.addEventListener('change', (event) => {
     generatePaginationControls(eventsData, rowsPerPage); 
 });
 
-console.log(`selected sortFilter is : ${sortFilter}`)
+
 
 
 let currentPage = 1; 
@@ -170,6 +182,17 @@ function displayEventsPage(events, rowsPerPage, currentPage, sortOrder) {
                                 </div>
                                 <span class="status ${event.status.toLowerCase()}"> <span class="stat-bob"></span> ${event.status} </span>
                             </div>
+
+                            <div class="list-collapsible ">
+
+                                    <p class="e-date">${event.date}</p>
+                                    <p>${event.speaker}</p>
+
+                                    <i class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </i>
+                                
+                                </div>
+
+
                         </li>`;
         tableBody.innerHTML += row;
 
@@ -179,6 +202,8 @@ function displayEventsPage(events, rowsPerPage, currentPage, sortOrder) {
 
     filterRenderedItems()
 }
+
+
 
 
 // Generate pagination buttons dynamically
@@ -278,7 +303,7 @@ eventsData.forEach(eventinf => {
     eventsPerMonth[month]++;
 });
 
-console.log(eventsPerMonth);
+
 
 const monthly = Object.keys(eventsPerMonth); 
 const eventCounting = Object.values(eventsPerMonth); 
@@ -362,11 +387,11 @@ document.querySelectorAll('.dropdowns').forEach(dropdown => {
        
         
         filterRenderedItems();
-        console.log(`${value}`);
+        
         
 
       } else {
-        console.log('filter issues');
+      
       }
     });
 
@@ -418,10 +443,7 @@ document.querySelectorAll('.dropdowns').forEach(dropdown => {
             const matchesStatus = !statusFilter || status.trim().toLowerCase() === statusFilter.trim().toLowerCase() || statusFilter === "Status";
 
            
-            console.log('filter is', eventNameFilter);
-
-            console.log(eventName);
-            console.log(matchesEventName);
+            
     
 
             
@@ -429,12 +451,11 @@ document.querySelectorAll('.dropdowns').forEach(dropdown => {
             if (matchesEventName && matchesDate && matchesStatus) {
                 renderedEv.style.display = ''; // Show item
 
-                console.log("all true");
+           
             } else {
                 renderedEv.style.display = 'none'; // Hide item
 
-                console.log("not all true");
-                console.log('date is', dateFilter);
+                
             }
 
             
@@ -489,8 +510,7 @@ function filterEvents() {
             const eventDate = new Date(event.date);
             const eventMonth = eventDate.toLocaleString('default', { month: 'long' }).toLowerCase();
             
-            // Log the event and its parsed month for debugging
-            console.log(`Event: ${event.eventName}, Month: ${eventMonth}`);
+           
             
             return eventMonth.includes(searchInput);
         });
@@ -512,6 +532,16 @@ function filterEvents() {
                                     </div>
                                         <span class="status ${event.status.toLowerCase()}"> <span class="stat-bob"></span> ${event.status}</span>
                                 </div>
+
+                                <div class="list-collapsible ">
+
+                                    <p class="e-date">${event.date}</p>
+                                    <p>${event.speaker}</p>
+
+                                    <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
+                                
+                                </div>
+
                             </li>`;
                 tableBody.innerHTML += row;
 
@@ -698,14 +728,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
-
-
-
-
-
 // Modal popops
 
 
@@ -718,13 +740,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
         
 
-        const eventListDiv = document.querySelectorAll(".items-list");
+       
 
+        const eventListDiv = document.querySelectorAll(".items-list");
         const modalCard = document.getElementById("modal");
 
         const modalEvName = document.querySelector(".name h2")
         const modalEvDate = document.querySelector(".name p")
         const modalEvDescr = document.querySelector(".card.des")
+        const modalEvSpeaker = document.querySelector(".ev-speaker")
+        const modalAttendees = document.querySelector(".total-attendees")
+
+
+
 
         const closeModal = document.getElementById("close-modal");
 
@@ -732,14 +760,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
             
 
-            const eventsListNameBtn = eventList.querySelector(".event-list-name p");
+            const eventsListNameBtn = eventList.querySelector(".event-list-name p, #info-spk");
+
             const eventsListDate = eventList.querySelector(".e-date");
+            const eventsSpeaker = eventList.querySelector("#info-spk");
+            const eventsAttendees = eventList.querySelector("#info-atd");
+            // const eventsAttendees = eventList.querySelector("#info-atd");
 
 
             eventsListNameBtn.addEventListener("click", function() {
 
                 modalEvName.textContent = eventsListNameBtn.textContent;
                 modalEvDate.textContent = eventsListDate.textContent;
+                modalEvSpeaker.textContent = eventsSpeaker.textContent;
+                modalAttendees.textContent = eventsAttendees.textContent;
+                console.log(modalEvSpeaker);
+
 
 
                 modalCard.style.display="flex";
@@ -749,17 +785,60 @@ document.addEventListener("DOMContentLoaded", function() {
                 }, 500);
             })
 
+            
+            
+            const hiddenInfos = eventList.querySelector(".hidden-infos");
+
+            hiddenInfos.style.width = "80px";
+
+
+
+            const collapsibleListContent = eventList.querySelector(".list-collapsible");
+
+            const collapsibleBtn = eventList.querySelector(".mobile-collapse-btn");
+
+            // collapsibleBtn.addEventListener("click", function() {
+
+              
+
+            //    collapsibleBtn.classList.add("rotate-90");
+            //    collapsibleListContent.classList.add('collapse-down');
+
+                
+
+                
+
+            // });
+
+            collapsibleBtn.addEventListener("click", function() {
+
+                collapsibleBtn.classList.add("rotate-90");
+                collapsibleListContent.classList.add("collapse-down")
+
+               
+            });
+            
+
+
+       
 
         
         });
 
 
         closeModal.addEventListener("click", function() {
-            modalCard.style.display="none";
+            
+            modalCard.style.opacity= "0";
+
+            setTimeout(() => {
+                modalCard.style.display="none";
+            }, 500);
         })
 
 
     }
+
+    
 
     modalCard();
 
