@@ -1354,12 +1354,23 @@ left: calc(100% - 0.8rem);
         display: none;
     }
 
+    .aside-wrapper{
+      position: relative;
+      top: 0;
+      bottom: 0;
+      
+      min-width: 240px;
+    }
+
     aside{
         
         min-width: 240px;
         width: 240px;
         display: flex;
         flex-direction: column;
+
+        position: fixed;
+        height: 100%;
         
         gap: 10px;
         transition: all 0.5s ease-in-out;
@@ -1626,15 +1637,6 @@ left: calc(100% - 0.8rem);
       
     }
     
-    .finishes-btn{
-      height: 80px;
-      width: 60% !important;
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-    
-    }
-
    
     
     .modal-btn{
@@ -1650,18 +1652,30 @@ left: calc(100% - 0.8rem);
       border: 1px solid var(--border-white);
       width: 30%;
     }
+
+
+    
+    .finishes-btn{
+      height: 80px;
+      width: 60% !important;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    
+    }
+
     
     .delete{
       background-color: #F43F5E;
       color: white;
-      width: 47%;
+      width: 40%;
 
     }
     
     .mark{
       color: white;
       background-color: var(--primary-color);
-      width: 47%;
+      width: 58%;
     }
     
     

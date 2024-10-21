@@ -787,7 +787,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 setTimeout(() => {
                     modalCard.style.opacity = "1";
-                }, 500);
+                }, 200);
             })
 
             
@@ -833,7 +833,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             setTimeout(() => {
                 modalCard.style.display="none";
-            }, 500);
+            }, 200);
         })
 
 
