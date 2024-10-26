@@ -52,45 +52,7 @@ const eventsData = [
 
 
 
-  function populateTable(events) {
-
-    const tableBody = document.getElementById('eventsBody');
-    tableBody.innerHTML = ''; 
-
-    events.forEach(event => {
-        const row =     `<li class="items-list">
-                            <div class="event-list-tabs">
-                                <div class="event-list-name">
-                                    <div class="icon-box mobile-collapse-btn"><img src="icons/chevron-right.svg" class="icon sm" /></div>
-                                    <p>${event.eventName}</p>
-                                </div>
-                                <div class="desktop-middle-tabs">
-                                    <p class="e-date">${event.date}</p>
-                                    <p>${event.speaker}</p>
-                        
-                                </div>
-                                <span class="status ${event.status.toLowerCase()}"> <span class="stat-bob"></span> ${event.status}</span>
-                            </div>
-
-                            <div class="list-collapsible ">
-
-                                    <p class="e-date">${event.date}</p>
-
-                                    <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
-
-                                    <p>${event.speaker}</p>
-
-                                    
-                                
-                                </div>
-
-
-                        </li>`;
-        tableBody.innerHTML += row;
-
-        modalCard();
-    });
-}
+ 
 
 
 function populateEventNameSelect(evName) {
@@ -121,7 +83,7 @@ populateEventNameSelect(eventsData)
 
 let selectedSort = "Most Recent"
 
-// const sortFilter = document.getElementById('sortFilter');
+const sortFilter = document.getElementById('sortFilter');
 
 document.querySelector('#sortFilter').addEventListener('change', function() {
     selectedSort = this.value; 
@@ -188,9 +150,14 @@ function displayEventsPage(events, rowsPerPage, currentPage, sortOrder) {
 
                             <div class="list-collapsible ">
 
+                                    <div></div>
+
                                     <p class="e-date">${event.date}</p>
                                     <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
                                     <p>${event.speaker}</p>
+
+
+                                    <div></div>
 
                                 
                                 </div>
@@ -260,7 +227,7 @@ document.querySelector('#rows-select').addEventListener('change', function() {
 
     const filteredEvents = filterRenderedItems(eventsData);
 
-    displayEventsPage(filteredEvents, rowsPerPage, currentPage);
+    displayEventsPage(filteredEvents, rowsPerPage, currentPage, selectedSort);
     generatePaginationControls(filteredEvents, rowsPerPage); // Regenerate pagination
     
 
@@ -538,11 +505,15 @@ function filterEvents() {
 
                                 <div class="list-collapsible ">
 
+                                    <div></div>
+
                                     <p class="e-date">${event.date}</p>
 
                                     <p class="hidden-infos"> <span id="info-spk">${event.speaker}</span><span id="info-dsc">${event.description}</span> <span id="info-atd">${event.attendees}</span> </p>
 
                                     <p>${event.speaker}</p>
+
+                                    <div></div>
 
                                 
                                 </div>
@@ -788,39 +759,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 setTimeout(() => {
                     modalCard.style.opacity = "1";
                 }, 200);
+
+
+
+                
+
+
+
+
+
             })
 
             
             
-           
-
-            const collapsibleListContent = eventList.querySelector(".list-collapsible");
-
-            const collapsibleBtn = eventList.querySelector(".mobile-collapse-btn");
-
-            // collapsibleBtn.addEventListener("click", function() {
-
-              
-
-            //    collapsibleBtn.classList.add("rotate-90");
-            //    collapsibleListContent.classList.add('collapse-down');
-
-                
-
-                
-
-            // });
-
-            collapsibleBtn.addEventListener("click", function() {
-
-                collapsibleBtn.classList.add("rotate-90");
-                collapsibleListContent.classList.add("collapse-down")
-
-               
-            });
-            
-
-
+        
        
 
         
@@ -837,11 +789,35 @@ document.addEventListener("DOMContentLoaded", function() {
         })
 
 
+
+
+
+
+
     }
 
-    
-
     modalCard();
+
+    const dropEachItem = document.querySelectorAll(".items-list");
+    dropEachItem.forEach(itemsList => {
+           
+
+        const collapsibleListContent = itemsList.querySelector(".list-collapsible");
+
+        const collapsibleBtn = itemsList.querySelector(".mobile-collapse-btn");
+
+       
+        collapsibleBtn.addEventListener("click", function() {
+
+        collapsibleBtn.classList.toggle("rotate-90");
+        collapsibleListContent.classList.toggle("collapse-down")
+
+           
+        });
+        
+
+
+    })
 
 
 
